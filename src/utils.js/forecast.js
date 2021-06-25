@@ -16,11 +16,15 @@ const forecast = (latitude, longitude, callback) => {
 			callback(
 				undefined,
 				body.current.weather_descriptions +
-					". It is currently " +
+					". Local time today is " +
+					body.location.localtime +
+					" .It is currently " +
 					body.current.temperature +
 					" degrees out. It feels like " +
 					body.current.feelslike +
-					" degrees out."
+					" degrees out. The humidity for today is " +
+					body.current.humidity +
+					" %. "
 			);
 		}
 	});
